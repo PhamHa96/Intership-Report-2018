@@ -1,0 +1,62 @@
+<div class="info ">
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-12 content">
+        <div class="row">
+
+          <div class="left col-md-6">
+            <p>Name:</p>
+          </div>
+          <div class="right col-md-6">
+            <input type="text" class="form-control" placeholder="Change name" required name="name"  [(ngModel)]="data.name" [disabled]="isDisable">
+          </div>
+          <div class="left col-md-6">
+            <p>Adress:</p>
+          </div>
+          <div class="right col-md-6">
+            <input type="text" class="form-control" name="adress" [(ngModel)]="data.address" [disabled]="true">
+          </div>
+          <div class="left col-md-6">
+            <p>Min Price:</p>
+          </div>
+          <div class="right col-md-6">
+            <input type="text" class="form-control" placeholder="Change min price" required name="minprice" [(ngModel)]="data.minPrice"
+              [disabled]="isDisable">
+          </div>
+          <div class="left col-md-6">
+            <p>Phone:</p>
+          </div>
+          <div class="right col-md-6">
+            <input type="text" class="form-control" placeholder="Change max price" required name="maxprice" [(ngModel)]="data.maxPrice" [disabled]="isDisable">
+          </div>
+
+         
+          <div class="left col-md-6">
+            <p>Time Open:</p>
+          </div>
+          <div class="right col-md-6">
+            <input type="time" class="form-control" placeholder="change time" required name="timestart" [(ngModel)]="data.timeStart" [disabled]="isDisable">
+          </div>
+          
+          <div class="left col-md-6">
+            <p>Time Close:</p>
+          </div>
+          <div class="right col-md-6">
+            <input type="time" class="form-control" placeholder="change time" required name="timeEnd" [(ngModel)]="data.timeAnd" [disabled]="isDisable">
+          </div>
+          <div class="left col-md-6">
+            <p>Detail:</p>
+          </div>
+          <div class="right col-md-6">
+            <input style="height: 100px" type="text" class="form-control" placeholder="change detail" required name="detail" [(ngModel)]="data.detail" [disabled]="isDisable">
+          </div>
+          <div class="buttonclass col-md-6 col-md-push-3">
+            <button type="submit" class="btn btn-success" (click)="update()">Save Change</button>
+            <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

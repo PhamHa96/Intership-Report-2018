@@ -1,0 +1,21 @@
+<div class="boss">
+  <div class="titile">
+    <h5>LIST FRIENDS</h5>
+    <hr>
+  </div>
+ 
+  <div class="top row"  *ngFor="let frd of friendInfo">
+    <div class="col-md-4">
+      <img class="image" *ngIf="frd.Image==='' " src="assets/images.png" alt="" width="50" height="50">
+      <img class="image" *ngIf="frd.Image!=='' " src="assets/{{frd.Image}}" alt="" width="50" height="50">
+      <img class="image" *ngIf="frd.Image!=='' " src="{{frd.Image}}" alt="" width="50" height="50">
+    </div>
+    <div class="info col-md-8 text-left">
+      <p style="font-weight: 700; margin-top: 12px; font-size:15px; color: rgb(72, 59, 255); cursor: pointer; " class="name">{{ frd.Name }}</p>
+      <p style="margin-top: -10px;font-size:12px" class="address">{{frd.Address}}</p>
+    </div>
+    <hr>
+  </div>
+
+  
+</div>

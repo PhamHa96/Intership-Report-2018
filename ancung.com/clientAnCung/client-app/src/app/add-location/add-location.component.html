@@ -1,0 +1,65 @@
+<div class="container boss">
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <span>Name:</span>
+        <input autofocus type="text" id="tenquan" class="form-control" placeholder="Enter name.." required autofocus [(ngModel)]="quan.name"
+          name="name">
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <span>Type:</span>
+        <select name="typeFood" class="form-control" style="height: 38px;" [(ngModel)]="quan.typeFood">
+          <option *ngFor='let type of typeFood' value="{{type._id}}">{{type.name}}</option>
+        </select>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-4">
+          
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <span>Time Open:</span>
+        <input type="time" class="form-control" [(ngModel)]="quan.timeStart" name="timeStart">
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <span>To:</span>
+        <input type="time" class="form-control" [(ngModel)]="quan.timeAnd" name="timeAnd">
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-4 text-center">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <span>Min Price:</span>
+        <input step="1000" type="number" min="0" class="form-control" [(ngModel)]="quan.minPrice" name="minPrice">
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <span>Max Price:</span>
+        <input step="1000" type="number" min="0" class="form-control" [(ngModel)]="quan.maxPrice" name="maxPrice">
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-4 text-center">
+        <input accept="image/*" style="margin-top:24px;"  (change)="onFileSelected($event)" name="file" type="file" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <p style="margin-top: 30px; margin-bottom:10px;">Detail </p>
+        <textarea style="width: 500px ; height:300px" class="form-control" name="detail" id="" cols="30" rows="10" [(ngModel)]="quan.detail"></textarea>
+        <button type="submit" (click)="createRestaurent()" style="margin-top: 30px; margin-bottom: 30px"  class="btn btn-outline-primary" >
+          <i class="fas fa-location-arrow"></i> Add new location</button>
+      </div>
+      <div style="margin-top: 32px" class="col-sm-12 col-md-6 col-lg-6">
+        <span>Address: </span>
+        <div class="form-group">
+          <input name="address" [(ngModel)]="quan.address" placeholder="Search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
+            #search [formControl]="searchControl">
+
+        </div>
+        <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+          <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+        </agm-map>
+        
+      </div>
+    </div>
+</div>

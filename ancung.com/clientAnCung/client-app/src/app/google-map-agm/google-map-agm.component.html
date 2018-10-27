@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="form-group">
+    <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
+      #search [formControl]="searchControl">
+  </div>
+<div>
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="zoom">
+    <agm-marker [latitude]="latitude" [longitude]="longitude">
+      <agm-info-window style="font-size: 12px;">
+        <div class="text-center">
+            YOU ARE HERE!
+        </div>
+      </agm-info-window>
+    </agm-marker>
+    <!-- all quan -->
+    <agm-marker class="location" *ngFor="let marker of quans" [latitude]="marker.lat" [longitude]="marker.long" [iconUrl]="'assets/rsz_restaurant_marker.png'">
+      <agm-info-window style="font-size: 12px;">
+        <div class="text-center">
+            <img *ngIf="marker.image[0]?marker.image[0].image: ''" src="http://localhost:3000/public/restaurant/{{marker.image[0].image}}" alt="" width="200" height="150">
+            <img *ngIf="marker.image[0]?!marker.image[0].image: ''" src="assets/image-not-found.jpg" alt="" width="200" height="180">
+
+        </div>
+        <p>
+          <i class="fas fa-home"></i>  {{marker.name}}</p>
+        <p>
+        <p>
+          <i class="fas fa-map-marker"></i>  {{marker.address}}</p>
+        <p>
+          <i class="far fa-clock"></i> {{marker.timeStart}} - {{marker.timeAnd}}
+        </p>
+        <p class="minmax" style="font-size: 20;">
+          <i class="fas fa-dollar-sign"></i>
+          <span> Price:{{marker.minPrice}} VNĐ</span> -
+          <span style="padding-left: 5%;">{{marker.maxPrice}} VNĐ</span>
+        </p>
+        <div class="btn_flow text-center">
+          <button style="width:95px" type="button" class="btn btn-danger">Set party</button>
+          <button type="button" class="btn btn-success">Join</button>
+        </div>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>
+</div>
+<!-- <div> -->

@@ -1,0 +1,24 @@
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+  }
+.collapse a {
+    color: ghostwhite;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.collapse a:hover{
+    color: greenyellow;
+}
+
+.navbar-brand{
+    font-size: 27px;
+    margin-right: 40px;
+}
+// :host {
+//     display: block;
+// }
+
+#welcome {
+    color: white;
+}

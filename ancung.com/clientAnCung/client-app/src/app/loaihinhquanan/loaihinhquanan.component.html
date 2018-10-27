@@ -1,0 +1,63 @@
+<div class="admin container">
+  <div class="row">
+    <div style="margin-top:50px;" class="menu col-md-2">
+      <div class=" text-center tieude">
+        <h4>
+          <i class="far fa-address-book"></i> HỒ SƠ</h4>
+        <hr>
+        <br>
+      </div>
+      <div>
+        <button [routerLink]="['/manarestaurant']" style="width:  145px" type="button" class="btn btn-primary">Quản lí quán ăn</button>
+      </div>
+      <br>
+      <div>
+        <button [routerLink]="['/manatypefood']"  style="width:  145px" type="button" class="btn btn-primary">Loại hình quán ăn</button>
+      </div>
+    </div>
+    <!-- dong cot trai -->
+    <div class="col-md-10 col-md-push-1">
+      <div class="boss">
+        <div class="container " >
+          <div class="search">
+            <button type="submit" class="btn btn-success" (click)="openAdd()">
+              <i class="fas fa-plus-square"></i> Add Type Food</button>
+            <div *ngIf="isShowAdd" class="inputsearch">
+              <span>Add new type restaurant:</span>
+              <br>
+              <input [(ngModel)]="txtNewTypeFood" width="100px" type="text" id="txtTypeFood" class="form-control" placeholder="Enter a new type.."
+                required autofocus>
+              <br>
+              <button type="submit" class="btn btn-primary" (click)="addTypeFood()">
+                Submit </button>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <table class=" text-center table custab">
+              <thead class="thead-light">
+                <tr>
+                  <th>Name</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tr *ngFor="let type of listTypeFood">
+                <td>
+                  {{ type.name}}
+                </td>
+                <td class="text-center">
+                  <!-- <button style="width: 56px; height: 29px; font-size: 12px" (click)="update(type._id)" type="button" class="btn btn-primary">
+                    <i class="fas fa-edit"></i> Edit</button> -->
+                  <button style="width: 56px; height: 29px; font-size: 12px" (click)="delete(type._id)" type="button" class="btn btn-danger">
+                    <i class="far fa-trash-alt"></i> Del</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

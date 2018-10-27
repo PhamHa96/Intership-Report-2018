@@ -1,0 +1,24 @@
+agm-map{
+    height: 400px;
+}
+.boss{
+ margin-top: 110px; 
+}
+
+.choose_file{
+    position:relative;
+    display:inline-block;    
+	border-radius:8px;
+    border:#ebebeb solid 1px;
+    width:130px; 
+    padding: 4px 6px 4px 8px;
+    font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
+    color: #7f7f7f;
+    margin-top: 2px;
+	background:white
+}
+.choose_file:hover {
+    background: greenyellow;
+    cursor: pointer;
+    color: white;
+}

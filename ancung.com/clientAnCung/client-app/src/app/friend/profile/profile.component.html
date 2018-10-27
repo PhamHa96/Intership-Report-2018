@@ -1,0 +1,48 @@
+<div class="search col-md-12">
+  <div class="col-md-5">
+    <span style="margin-left: 15px">
+      <i class="fas fa-search"></i> Find your friend:</span>
+    <input maxlength="100" [(ngModel)]="keySearchFriend" width="100px" type="text" id="find" class="form-control" placeholder="Enter a name or email.."
+      required autofocus>
+  </div>
+  <div class="col-md-4">
+    <button style="margin-top:8px; margin-bottom: 20px" type="submit" (click)="search()" class="btn btn-outline-primary">
+      <i class="fas fa-search"></i> Search</button>
+  </div>
+</div>
+<!-- *ngIf="user.friend[0].id_friend==idCheckFriend"  -->
+<div *ngFor='let user of dataUser' class="infouser">
+  <div class="col-md-12">
+    <div class="col-md-10 col-md-push-1">
+      <div class="row infomationfriend">
+        <div class="col-md-4">
+          <img class="image " src="assets/images.png" alt="" width="100" height="100">
+          <button (click)="addFriend(user._id)"style="margin-top: 117px; font-size:12px; margin-left: 9px " class="btnAddFriend"
+            type="button" class="btn btn-success"> Add Friend</button>
+          <!--<span style="position: absolute ;margin-top: 117px; font-size:12px; margin-left: 9px; color:#26d626">
+             <i class="fas fa-check"></i> Your friend </span> -->
+         </div>
+        <div class="col-md-3">
+          <p>
+            <b>Name:</b>
+          </p>
+          <p>
+            <b>Email:</b>
+          </p>
+          <p>
+            <b>Phone:</b>
+          </p>
+          <p>
+            <b>Sex:</b>
+          </p>
+        </div>
+        <div class="col-md-5">
+          <p>{{user.name}}</p>
+          <p>{{user.email}}</p>
+          <p>{{user.phone}}</p>
+          <p>{{user.sex}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

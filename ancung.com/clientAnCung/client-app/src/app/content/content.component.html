@@ -1,0 +1,34 @@
+<div class="body">
+  <!-- The video -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <span>Find</span>
+        <input [(ngModel)]="txtTim" type="text" id="find" class="form-control" placeholder="Search something.." required autofocus>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <span>Type</span>
+        <select placeholer="Choose type restaurent.." class="form-control" style="height: 46px;" [(ngModel)]="getIdTypeFood">
+          <option *ngFor='let type of typeFood' value="{{type._id}}">{{type.name}}</option>
+        </select>
+      </div>
+     
+    </div>
+
+  </div>
+  <br>
+
+  <div class="text-center">
+    <button (click)="search()" type="button" class="btn btn-danger">
+      <i class="fas fa-search"></i> Search</button>
+    <br>
+    <br>
+    <span style="margin-left: -20px;">or</span>
+    <button [routerLink]="['/addlocation']" type="button" class="btn btn-outline-secondary">
+      <i class="fas fa-location-arrow"></i> Add new location</button>
+  </div>
+<br>
+</div>
+<div class="row">
+  <app-quanan ></app-quanan>
+</div>

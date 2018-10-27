@@ -1,0 +1,35 @@
+.image {
+    border-radius: 50%;
+    border: 2px solid black;
+    margin-bottom: 30px;
+  }
+.left {
+    text-align: left;
+    p {
+        font-weight: 500;
+    }
+}
+.right {
+    text-align: left;
+}  
+.info {
+    margin-left: 25%;
+}
+:host {
+    margin-left: 30px;
+}
+.infomationfriend{
+    border: 2px solid #d2d2d2;
+    margin-bottom: 23px;
+    position: relative;
+    border-radius: 9px;
+}
+.infomationfriend .image {
+    position: absolute;
+    margin-top: 10px;
+}
+.infomationfriend .btnAddFriend {
+    position: absolute;
+    font-size:12px;
+    margin-top: 110px;
+}

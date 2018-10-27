@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark menu">
+  <a class="navbar-brand" [routerLink]="['/home']">ANCUNG.COM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a [routerLink]="['/addlocation']" class="nav-link" >
+          <i class="fa fa-plus-circle" aria-hidden="true"></i> ADD LOCATION</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/party']">
+          <i class="fas fa-utensils"></i> PARTY</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/listfriend']" class="nav-link">
+          <i class="fa fa-address-book" aria-hidden="true"></i> FRIENDS</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/contact']" class="nav-link">
+          <i class="fas fa-envelope"></i> CONTACT</a>
+      </li>
+      <li *ngIf="isAdmin" class="nav-item">
+        <a [routerLink]="['/admin']" class="nav-link">
+          <i class="fas fa-lock"></i> ADMIN</a>
+    </ul>
+    
+    <button [routerLink]="['/profile']" class="btn btn-outline-danger my-2 my-sm-0" type="submit" *ngIf="isInLogin">
+      <i class="fas fa-user-circle"></i> {{user.name}} 's Profile </button>
+    <button [routerLink]="['/login']" class="btn btn-outline-success my-2 my-sm-0" type="submit" *ngIf="!isInLogin"><i class="fas fa-sign-in-alt"></i> Sign In</button> 
+
+  </div>
+</nav>

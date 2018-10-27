@@ -1,0 +1,84 @@
+<div class="boss">
+  <div class="container ">
+    <div class="row">
+      <div style="font-size:13px; padding: 16px" *ngFor='let party of listParty' class="col-md-6 lead">
+
+        <div class="col-md-12 info">
+          <div class="row">
+            <div class="col-md-3 left">
+              <p>Name party: </p>
+            </div>
+            <div class="col-md-9">
+              <p>{{party.titel}}</p>
+            </div>
+            <div class="col-md-3 left">
+              <p>Description: </p>
+            </div>
+            <div class="col-md-9">
+              <p>{{party.field}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 left">
+              <p>Current number: </p>
+            </div>
+            <div class="col-md-9">
+              <label for="">{{party.currentNumber}}/{{party.numberMax}}</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 left">
+              <p>Time start: </p>
+            </div>
+            <div class="col-md-9">
+              <p>{{party.timeStart}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 left">
+              <p>Time end: </p>
+            </div>
+            <div class="col-md-9">
+              <p>{{party.timeEnd}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 left">
+              <p>date: </p>
+            </div>
+            <div class="col-md-9">
+              <p>{{party.dateStart.substring(0,10)}}</p>
+            </div>
+          </div>
+          <!-- <div class="row">
+            <div class="col-md-3 left">
+              <p>List user: </p>
+            </div>
+            <div class="col-md-9">
+              <p>Pham Ha , Troy Sivan, Shaw Mensdes</p>
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="col-md-3 left">
+              <p>Leader: </p>
+            </div>
+            <div class="col-md-9">
+              <p for="">Pham Ha</p>
+            </div>
+
+
+          </div>
+          <div class="row">
+            <div class="col-md-3 left">
+              <p>Status: </p>
+            </div>
+            <div class="col-md-9">
+              <p style="color: green" *ngIf="party.public">Public </p>
+              <p style="color: orange" *ngIf="!party.public">Private </p>
+            </div>
+            <button [routerLink]="['/party/',party._id]" style="width:85px; font-size:13px" type="button" class="btn btn-outline-info">View more</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>

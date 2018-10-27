@@ -1,0 +1,140 @@
+<div class="boss">
+  <div class="container ">
+    <h4 class="text-center">DETAIL THE PARTY</h4>
+    <div style="font-size:13px; padding: 16px" class="row lead">
+
+      <div class="col-md-7 info">
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>Name party: </p>
+          </div>
+          <div class="col-md-9">
+            <p>{{party.titel}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>Description: </p>
+          </div>
+          <div class="col-md-9">
+            <p>{{party.field}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>Current number: </p>
+          </div>
+          <div class="col-md-9">
+            <label for="">{{party.currentNumber}}/{{party.numberMax}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>Time start: </p>
+          </div>
+          <div class="col-md-9">
+            <p>{{party.timeStart}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>Time end: </p>
+          </div>
+          <div class="col-md-9">
+            <p>{{party.timeEnd}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>date: </p>
+          </div>
+          <div class="col-md-9">
+            <p>{{(party.dateStart).substring(0,10)}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>List user: </p>
+          </div>
+          <div class="col-md-9">
+            <div *ngFor='let user of listObject'>
+              {{user.name}},
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>Address: </p>
+          </div>
+          <div class="col-md-9">
+            <p for=""> 98 Man Thien</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>Name restaurant: </p>
+          </div>
+          <div class="col-md-9">
+            <p for="">Sườn cây quán</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>Leader: </p>
+          </div>
+          <div class="col-md-9">
+            <p for="">Troy Sivan</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 left">
+            <p>Status: </p>
+          </div>
+          <div class="col-md-9">
+            <p style="color: green" *ngIf="party.public">Public </p>
+            <p style="color: orange" *ngIf="!party.public">Private </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn_flow text-center">
+            <button (click)="join()" style="margin-left: 20px" type="button" class="btn btn-success">Join</button>
+            <button class="btn btn-primary text-center" mat-button (click)="viewListInvite()">View List Invite</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 map">
+        <agm-map [latitude]="lat"  [longitude]="lng">
+          <agm-direction *ngIf="dir"  [origin]="dir.origin"  [destination]="dir.destination"></agm-direction>
+            </agm-map>
+            <div style="margin-top: 20px" class="col-md-12 text-center">
+              <button class="btn btn-info" type="button"  (click)="getDirection()">Get Direction</button>
+            </div>
+      </div>
+
+    </div>
+    <div *ngFor='let user of listUser row' class="infouser">
+      <div class="col-md-12">
+        <div class="row infomationfriend">
+          <img class="image " src="assets/images.png" alt="" width="60" height="60">
+          <div class="col-md-3">
+            <p>
+              <b>Name:</b>
+            </p>
+            <p>
+              <b>Email:</b>
+            </p>
+            <p>
+              <b>Phone:</b>
+            </p>
+          </div>
+          <div class="col-md-5">
+            <p>{{user.name}}</p>
+            <p>{{user.email}}</p>
+            <p>0{{user.phone}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>

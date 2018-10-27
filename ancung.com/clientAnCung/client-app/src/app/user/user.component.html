@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="boss">
+      <div class="top row">
+        <div class="col-md-4">
+          <img class="image" *ngIf="user.image!='' " src="assets/{{user.image}}" alt="" width="50" height="50">
+          <img class="image" *ngIf="user.image ===''" src="./assets/defaultavatar.png" alt="" width="50" height="50">
+          <!-- <img class="image" *ngIf="dataUser.Image!=='' " src="{{dataUser.Image}}" alt="" width="50" height="50"> -->
+        </div>
+        <div class="info col-md-8 text-left">
+          <p style="font-weight: 700; margin-top: 12px; font-size:15px; color: rgb(72, 59, 255); cursor: pointer; " class="name">{{user.name}}</p>
+          <p style="margin-top: -10px;font-size:12px" class="address">{{user.address}}</p>
+        </div>
+        <hr>
+      </div>
+    
+      <div class="menubar text-left">
+        <div class="choose">
+          <button (click)="edit()" type="button" class="btn btn-default">
+            <p>
+              <i class="fas fa-edit"></i>Edit Profile
+            </p>
+          </button>
+        </div>
+        <br>
+        <div class="choose">
+          <button (click)="signout()" type="button" class="btn btn-default">
+            <p>
+              <i class="fas fa-sign-out-alt"></i> Sign Out</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <app-edit [isDisable]="isDisable" (onTrueDisable)="onTrueDisable($event)"></app-edit>
+  </div>
+</div>
+    

@@ -1,0 +1,62 @@
+<div class="container-fluid">
+
+  <!-- Control the column width, and how they should appear on different devices -->
+  <div class="row row1">
+
+    <div class="col-md-5 banner" style="background-color:white;">
+        <img *ngIf="quanAn.image[0].image" src="http://localhost:3000/public/restaurant/{{quanAn.image[0].image}}" alt="" width="100%" height="100%">
+        <img *ngIf="!quanAn.image[0].image" src="assets/image-not-found.jpg" alt="" width="100%" height="100%">
+    </div>
+    <div class="col-md-7 restaurant-detail" style="background-color:wheat;">
+      <div class="content">
+        <img class="mb-4" src="assets/map-quanan.png" alt="" width="60" height="60">
+        <h1>
+          <span>{{quanAn.name}}</span>
+        </h1>
+        <p style="font-size: 20px;">
+          <i class="fas fa-map-marker"></i> {{quanAn.address}}</p>
+        <P class="time" class="adress" style="font-size: 20px;">
+          <i class="far fa-clock"></i> {{quanAn.timeStart}} - {{quanAn.timeAnd}}</P>
+        <p class="minmax" style="font-size: 20;">
+          <i class="fas fa-dollar-sign"></i>
+          <span style="font-size: 20px;">Min Price: {{quanAn.minPrice}} VNĐ</span> -
+          
+          <span style="font-size: 20px; padding-left: 5%;"><i class="fas fa-dollar-sign"></i> Max Price: {{quanAn.maxPrice}} VNĐ</span>
+        </p>
+        <div class="btn_flow">
+          <button style="width:95px" type="button" class="btn btn-danger" (click)="openDialog(quanAn._id)">Set party</button>
+          <button type="button" class="btn btn-success" (click)="openJoinDialog(quanAn._id)">Join</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- introduce -->
+  <div class="row introduce">
+    <div class="col-md-12 text-center">
+      <h3>Detail: </h3>
+    </div>
+    <div class="col-md-12">
+      {{quanAn.detail}}
+    </div>
+    <div style="margin-top: 20px" class="col-md-12 text-center">
+        <button class="btn btn-info" type="button"  (click)="getDirection()">Get Direction</button>
+    </div>
+  </div>
+  <!-- cmt -->
+  <div class="row map">
+      <div class="col-md-12">
+        <agm-map [latitude]="lat"  [longitude]="lng">
+          <agm-direction *ngIf="dir"  [origin]="dir.origin"  [destination]="dir.destination"></agm-direction>
+            </agm-map>
+      </div>
+  </div>
+  <!-- share -->
+  <div class="row" style="background-color: #f8f9fa ; padding:  150px 0; ">
+    <div class="col-lg-8 mx-auto">
+      <h2>Like on facebook: </h2>
+      <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=large&show_faces=true&share=true&height=80&appId"
+        width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
+        allow="encrypted-media"></iframe>
+    </div>
+
+  </div>

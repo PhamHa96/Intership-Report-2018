@@ -1,0 +1,60 @@
+img {
+    margin: 15px 15px;
+    margin-left: 50px;
+    border: none;
+    border-radius: 5%; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.quan {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.quan p{
+    margin-left: 50px;
+    margin-bottom: 2px;
+}
+
+.btn {
+    margin-left: 20px;
+}
+
+.info {
+    background-color: antiquewhite;
+}
+
+p {
+    white-space: nowrap; 
+    width: 300px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltiptext{
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

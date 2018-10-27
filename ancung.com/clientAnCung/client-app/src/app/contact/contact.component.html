@@ -1,0 +1,69 @@
+<div class="contact-pageheader">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="contact-caption">
+                  <h1 class="contact-title">Don’t Be Shy, Talk to Us.</h1>
+                  <p class="contact-text">Here is a few approaches to get in touch with me. It would be ideal if you send an email, fill the contact form <strong>I'm looking forward to speaking with you.</strong>
+                  </p>
+              </div>
+          </div>
+          <div class="col-lg-offset-1 col-lg-5 col-md-offset-1 col-md-5 col-sm-12 col-xs-12">
+              <div class="contact-form">
+                  <h3 class="contact-info-title">Contact Us</h3>
+                  <div class="row">
+
+                      <form [formGroup]="formContact" (ngSubmit)="onSubmitForm();">
+                          <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                  <label class="control-label sr-only " for="Name"></label>
+                                  <input id="name" type="text" placeholder=" Your name" class="form-control" required formControlName="name">
+                              </div>
+                          </div> -->
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                  <label class="control-label sr-only " for="email"></label>
+                                  <input id="email" type="text" placeholder="Your email" class="form-control" required formControlName="email">
+                              </div>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label class="control-label sr-only " for="email"></label>
+                                    <input id="email" type="password" placeholder="Your password" class="form-control" required formControlName="password">
+                                </div>
+                            </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                  <label class="control-label sr-only " for=""></label>
+                                  <input id="" type="text" placeholder="Your subject" class="form-control" required formControlName="subject">
+                              </div>
+                          </div>
+                          <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                  <label class="control-label required sr-only" for="select"></label>
+                                  <select class="form-control">
+                                      <option value="">What Are You Getting In Touch?</option>
+                                      <option value="">Relationship</option>
+                                      <option value="">Life Coaching</option>
+                                      <option value="">Leadership</option>
+                                      <option value="">Time Management</option>
+                                  </select>
+                              </div>
+                          </div> -->
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb20">
+                              <div class="form-group">
+                                  <label class="control-label sr-only" for="textarea"></label>
+                                  <textarea class="form-control pdt20" id="textarea" name="textarea" rows="4" placeholder="Message"  formControlName="message"></textarea>
+                              </div>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                              <button type="submit" class="btn btn-primary btn-lg ">Send message</button>
+                          </div>
+                      </form>
+                      <!-- <pre>{{ formContact.value | json }}</pre> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

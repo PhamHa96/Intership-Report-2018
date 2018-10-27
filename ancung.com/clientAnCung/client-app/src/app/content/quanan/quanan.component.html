@@ -1,0 +1,27 @@
+<div class="col-md-12">
+  <div *ngFor='let quan of quans' class="quan col-md-6">
+    <div class="">
+      <!-- <img  [src]="['https://ancungfriend.herokuapp.com/public/restaurant/',quan.image]" alt="" width="300" height="250"> -->
+      <img *ngIf="quan.image" src="http://localhost:3000/public/restaurant/{{quan.image}}" alt="" width="300" height="250">
+       <img *ngIf="!quan.image" src="assets/image-not-found.jpg" alt="" width="300" height="250">
+      <div class="row">
+        <div class="col-md-10">
+          <p style="font-weight:500; color: rgb(34, 31, 31);">{{quan.name}}</p>
+        </div>
+        <!-- <div class="col-md-2 favorite">
+          <i style="color:gray; font-size: 18px; margin-left: -10px;" class="fab fa-gratipay"></i>
+        </div> -->
+      </div>
+      <p>
+        <i style="color: gray;" class="fas fa-map-marker"></i> {{ quan.address }}
+      </p>
+      <p style="font-size: 12px;">
+        <i style="color: gray;" class="fas fa-info-circle"></i> {{ quan.timeStart }} - {{ quan.timeAnd }} </p>
+      <span class="btn">
+        <!-- Hiển thị chi tiết địa điểm thông qua id (2).1.(1) -->
+        <button [routerLink]="['/quanan/',quan._id]" style="width:95px;" type="button" class="btn btn-outline-info">View more</button>
+        <button style="width:95px" type="button" class="btn btn-danger" (click)="openDialog(quan._id)">Set party</button>
+        <button type="button" class="btn btn-success" (click)="openJoinDialog(quan._id)">Join</button>
+      </span>
+    </div>
+  </div>

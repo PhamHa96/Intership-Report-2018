@@ -1,0 +1,53 @@
+<div style="z-index:1000">
+    <!-- mat-dialog-title -->
+  <h3 style=" text-align: center;"  class="h2title">
+    <i class="fas fa-user-plus"></i> JOIN</h3>
+  <hr>
+  <mat-dialog-content>
+    <!-- *ngFor='let quan of quanAn' -->
+    <div *ngFor='let party of listParty' class="form1 container">      
+      <div  class="row">
+        <div class="col-sm-12 title">
+          <h4>
+            <i class="fas fa-utensils"></i>{{party.titel}}</h4>
+        </div>  
+        <div class="col-sm-6">
+          <label>Leader:</label>
+          <a>Ha Pham</a>
+          <br>
+          <label for="">Number join:</label> {{party.currentNumber}}
+          <i class="fas fa-user"></i>
+          <br>
+          <label for="">Date:</label> {{party.dateStart.substring(0, 10)}}
+        </div>
+        <div class="col-sm-6">
+          <label>Number Max:</label> {{party.numberMax}}
+          <i class="fas fa-users"></i>
+          <br>
+          <label for="">Time: </label> {{party.timeStart}} - {{party.timeEnd}}
+          <i class="far fa-clock"></i>
+          <br>
+          <label for="">Status: </label> <span style="color: green" *ngIf="party.public">Public </span>
+          <span style="color: orange" *ngIf="!party.public">Private </span>
+          <br>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button type="button" class="btn btn-primary btnView"  (click)="viewMore()" [routerLink]="['/party/',party._id]">View Detail</button>
+        </div>
+      </div>
+    </div>
+    <!-- <strong>{{data}}</strong> -->
+  </mat-dialog-content>
+  <hr>
+  <mat-dialog-actions>
+    <button class="btn btn-danger btnClose" mat-button (click)="onCloseConfirm()">Close </button>
+  </mat-dialog-actions>
+</div>

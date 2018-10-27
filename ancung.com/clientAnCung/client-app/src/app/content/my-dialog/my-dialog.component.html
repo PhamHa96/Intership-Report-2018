@@ -1,0 +1,90 @@
+<div style="z-index:1000">
+  <h2 class="text-center" mat-dialog-title>
+    <i class="fas fa-pen-square"></i> SET PARTY</h2>
+  <hr>
+  <mat-dialog-content>
+    <div class="container">
+      <div class="row">
+        <label class="col-md-4">Title:</label>
+        <input [(ngModel)]="party.titel" style="height: 36px" class="col-md-4 form-control" type="text">
+      </div>
+      <div class="row">
+        <label class="col-md-4">Field:</label>
+        <input [(ngModel)]="party.field" style="height: 36px" class="col-md-4 form-control" type="text">
+      </div>
+      <div class="row">
+        <label class="col-md-4">Number Max:</label>
+        <input [(ngModel)]="party.numberMax" style="height: 36px" class="col-md-4 form-control" type="number" min="1">
+        <label class="col-md-4 ">people</label>
+      </div>
+      <div class="row">
+        <label class="col-md-4">Time:</label>
+        <input [(ngModel)]="party.timeStart" style="height: 36px" type="time" class="form-control col-md-3">
+        <label>-</label>
+        <input [(ngModel)]="party.timeEnd" style="height: 36px" type="time" class="form-control col-md-3">
+      </div>
+      <div class="row">
+        <label class="col-md-4">Date start:</label>
+        <input [(ngModel)]="party.dateStart" style="height: 36px" class="form-control col-md-4" type="date" max="2018-12-31"> * Don't set a date too far from now!
+      </div>
+      <div style="margin-left: 210px;" class="row">
+        <label class="radio-inline">
+          <input type="radio" name="sex" id="inlineCheckbox1" value="true" [(ngModel)]="party.public" name="optradio" /> Public
+        </label>
+        <label tyle="margin-left: 10px;" class="radio-inline">
+          <input type="radio" name="sex" id="inlineCheckbox2" value="false" [(ngModel)]="party.public" name="optradio" /> Private
+        </label>
+      </div>
+      <div class="row">
+        <button style="margin-left: 217px;" [disabled]="hideCreate" class="btn btn-danger text-center" mat-button (click)="onCloseConfirm()">Create Party</button>
+
+      </div>
+      <!-- <div *ngIf="showFind" class="row">
+        <span> Find your friend to invited:</span>
+        <input style="margin-left: 5px" [(ngModel)]="keySearchFriend" width="90px" type="text" id="find" class="form-control" placeholder="Enter a name or email.."
+          required autofocus>
+        <button style=" padding: 2px;font-size: 10px; margin-left: 14px;" type="submit" (click)="search()" class="btn btn-outline-primary">
+          <i class="fas fa-search"></i> Search</button> 
+
+      </div> -->
+      <div *ngIf="showFind">
+        <div *ngFor='let user of objListFriend' class="infouser">
+          <div class="col-md-12">
+            <div class="row infomationfriend">
+              <div class="col-md-4">
+                <img class="image " src="assets/images.png" alt="" width="60" height="60">
+                <button  (click)="inviteFriend(user._id)" style="margin-top: 80px; font-size:12px; margin-left: 9px; margin-bottom: 10px "
+                  class="btnAddFriend" type="button" class="btn btn-success"> Invite </button>
+                <!--<span style="position: absolute ;margin-top: 117px; font-size:12px; margin-left: 9px; color:#26d626">
+                         <i class="fas fa-check"></i> Your friend </span> -->
+              </div>
+              <div class="col-md-3">
+                <p>
+                  <b>Name:</b>
+                </p>
+                <p>
+                  <b>Email:</b>
+                </p>
+                <p>
+                  <b>Phone:</b>
+                </p>
+              </div>
+              <div class="col-md-5">
+                <p>{{user.name}}</p>
+                <p>{{user.email}}</p>
+                <p>0{{user.phone}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <!-- <strong>{{data}}</strong> -->
+  </mat-dialog-content>
+  <hr>
+  <mat-dialog-actions>
+    <button class="btn btn-outline-secondary" mat-button (click)="onCloseCancel()" style="margin-left: 30px;">Cancel</button>
+  </mat-dialog-actions>
+</div>
